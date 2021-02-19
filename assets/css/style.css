@@ -1,0 +1,162 @@
+html{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    background-color: white;
+}
+.trn{
+  color: #318fb5;
+  text-shadow: 2px 1px;
+}
+
+.trs{
+  color: #5CDB95;
+  text-shadow: 2px 1px;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+from {
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #5CDB95, 0 0 40px #5CDB95, 0 0 50px #5CDB95, 0 0 60px #5CDB95, 0 0 70px #e60073;
+}
+to {
+  text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff, 0 0 80px #ff4da6;
+}
+}
+}
+
+h1{
+  text-shadow: 2px 1px;
+}
+/* navbar css starts here  */
+
+.navbar{
+  background-color: #318fb5;
+}
+
+.navbar-brand{
+    font-family: 'Andika New Basic', sans-serif;
+    font-size: 2rem;
+    padding-left: 30px;
+    color: #eeeeee!important;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #5CDB95, 0 0 40px #5CDB95, 0 0 50px #5CDB95, 0 0 60px #5CDB95, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #318fb5, 0 0 40px #318fb5, 0 0 50px #318fb5, 0 0 60px #318fb5, 0 0 70px #318fb5, 0 0 80px #ff4da6;
+  }
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+}
+
+.nav-link{
+    color: #eeeeee!important;
+    font-size: 1.2rem;
+    font-family: 'PT Sans', sans-serif;
+    text-shadow: 1px 1px;
+}
+
+.nav-link:hover{
+    background-color: #5CDB95;
+    border-radius: 20px;
+    box-shadow: 1px 1px;
+}
+
+.navbar-image{
+  height:50px;
+  width: 120px;
+  padding-left: 3px;
+}
+/* navbar css ends here  */
+
+/* here content css starts here  */
+.hero-content{
+    height: 74.2vh;
+    background-color: #203647;
+    color: #EDF5E1;
+    padding: 1rem;
+    border-top-left-radius: 10000px;
+    border-bottom-right-radius: 10000px;
+    margin-top: 2vh;
+}
+
+.hero-img{
+    height: 100%;
+    width: 100%;
+    padding-right: 100px;
+    padding-top: 70px;
+}
+
+
+@media only screen and (max-width: 766px) {
+    .hero-img {
+      display: none;
+    }
+}
+
+.get-started{
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    font-size: 162%;
+    background-color: #318fb5;
+    color: white!important;
+    transition: 0.3s;
+    box-shadow: 3px 3px 3px 0;
+    text-shadow: 1px 1px;
+}
+
+.get-started:hover{
+    text-decoration: none;
+    background-color: #5CDB95;
+    box-shadow: 3px 3px 3px 0;
+
+}
+/* here content css starts here  */
+
+/* footer css starts here */
+footer{
+    background-color: #318fb5;
+    color: #fff;
+}
+.website{
+  color: #24292e;
+}
+
+.social-icons li{
+    list-style: none;
+    display: inline;
+    padding: 0.7rem;
+}
+
+.github{
+    color: #fff;
+}
+
+.linkedin{
+    color: #5CDB95;
+}
+.linkedin:hover{
+  color:
+}
+
+.email{
+    color: #fdb827;
+}
+/* footer css ends here  */

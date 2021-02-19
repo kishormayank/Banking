@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="assets/css/customers.css">
+    <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- navbar starts here  -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="./index.html">CitiBANK</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home </a>
+                </li>
+                <li class="nav-item  active">
+                    <a class="nav-link" href="#footer">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- navbar ends here  -->
+
+    <!-- here content starts here -->
+    <div class="container-fluid hero-content ">
+      <div class="row align-items-center">
+        <div class="col-md-12 col-sm-6 text-center" data-aos="fade-up">
+          <div class="my-info">
+              <h2>Name: <span style="color:orange">Mayank Kishor</span></h2>
+              <h4>Account Credits: ₹<span id="myAccountBalance" style="color:#5CDB95">50000</span></h4>
+              <button class="btn btn-info my-info" data-toggle="modal" data-target="#sendMoney">Transfer Money</button>
+              <button class="btn btn-info my-info" href="" data-toggle="modal" data-target="#transactionHistory">All Transactions</button>
+          </div>
+        </div>
+      </div>
+
+    <!-- here content ends here -->
+
+
+    <!-- Modal send money -->
+    <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color:green">Transfer Now</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="input-group mb-3">
+                            <input type="text" id="enterName" class="form-control" placeholder="Recipient's username"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">@email.com</span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">₹</span>
+                            </div>
+                            <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount"
+                                aria-label="Amount (to the nearest rupee)">
+                            <div class="input-group-append">
+                                <span class="input-group-text">.00</span>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="sendMoney()" class="btn btn-success" data-dismiss="modal">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal transaction History-->
+    <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" style="color:black">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color:green">Transaction History</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="color:black">
+                    <ol id="transaction-history-body">
+
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- table  -->
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-hover table-striped table-success table-bordered text-center ">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Account Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="">
+                        <td scope="row">1</td>
+                        <td>Shourya</td>
+                        <td>shourya@email.com</td>
+                        <td>
+                            <p id="ShouryaBankBalance">20000</p>
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td scope="row">2</td>
+                        <td>Nitish</td>
+                        <td>Nitish@email.com</td>
+                        <td>
+                            <p id="NitishBankBalance">5000</p>
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td scope="row">3</td>
+                        <td>Rajesh</td>
+                        <td>raj@email.com</td>
+                        <td>
+                            <p id="rajBankBalance">10928</p>
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td scope="row">4</td>
+                        <td>Tim </td>
+                        <td>Tim@email.com</td>
+                        <td>
+                            <p id="TimBankBalance">300000</p>
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td scope="row">5</td>
+                        <td>Sheldon </td>
+                        <td>sheldon@email.com</td>
+                        <td>
+                            <p id="sheldonBankBalance">908745</p>
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td scope="row">6</td>
+                        <td>Leonard</td>
+                        <td>Leonard@email.com</td>
+                        <td>
+                            <p id="LeonardBankBalance">105050</p>
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td>7</td>
+                        <td>Howard</td>
+                        <td>howard@email.com</td>
+                        <td>
+                            <p id="howardBankBalance">10000</p>
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td scope="row">8</td>
+                        <td>penny</td>
+                        <td>penny@email.com</td>
+                        <td>
+                            <p id="snehaBankBalance">500020</p>
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td scope="row">9</td>
+                        <td>Amy</td>
+                        <td>amy@email.com</td>
+                        <td>
+                            <p id="amyBankBalance">90890</p>
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td scope="row">10</td>
+                        <td>Bernadette</td>
+                        <td>Bernadette@email.com</td>
+                        <td>
+                            <p id="BernadetteBankBalance">49750</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div><br>
+<br>
+<br>
+<br>
+
+    <!-- footer starts here -->
+    <footer id="footer">
+      <hr>
+      <div class="row text-center">
+        <div class="col-lg-6">
+          <p>&copy MAYANK KISHOR under <a class="website" href="https://www.thesparksfoundationsingapore.org">The Sparks Foundation</a></p>
+
+        </div>
+
+        
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+</body>
+</html>
